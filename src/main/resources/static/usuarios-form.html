@@ -1,0 +1,19 @@
+<form>
+	<h1>Cadastrar Novo Usuario</h1>
+  <div class="form-group">
+    <label for="inputNome">Nome</label>
+    <input type="text" class="form-control" id="inputNome" placeholder="Nome" 
+    		ng-model="usuario.nome">
+  </div>
+  
+<div class="form-group">
+    <label>Grupos</label>
+    <picklist size="20" data-picklist="" 
+    	data-pick-model="usuario.grupos" 
+    	data-pick-options="grupo.nomeGrupo for grupo in grupos track by grupo.id"
+    	convert-to-number>
+    	</picklist>
+</div>
+     
+  <button class="btn btn-primary" ng-click="save()">Salvar</button>
+</form>

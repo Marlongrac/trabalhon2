@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label>Nome</label>
+  {{categoria.nomeCat}}
+</div>
+<div class="form-group">
+  <label>Descricao</label>
+  {{categoria.descCat}}
+</div>
+
+<a href="#categorias/{{categoria.id}}/edit" class="btn btn-primary">Editar</a>
+<button class="btn btn-danger" ng-click="remove()">Excluir</button>

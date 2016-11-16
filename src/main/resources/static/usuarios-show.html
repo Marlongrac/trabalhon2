@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label>Nome</label>
+  {{usuario.nome}}
+</div>
+
+<div class="form-group">
+  <label>Grupos</label>
+   <ul>
+   	<li ng-repeat="grupo in usuario.grupos">
+   		{{grupo.nomeGrupo}}
+   	</li>
+   </ul>
+</div>
+
+<a href="#usuarios/{{usuario.id}}/edit" class="btn btn-primary">Editar</a>
+<button class="btn btn-danger" ng-click="remove()">Excluir</button>

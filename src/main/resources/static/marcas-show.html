@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label>Marca</label>
+  {{marca.nomeMarca}}
+</div>
+<div class="form-group">
+  <label>Descricao da Marca</label>
+  {{marca.descMarca}}
+</div>
+
+<a href="#marcas/{{marca.id}}/edit" class="btn btn-primary">Editar</a>
+<button class="btn btn-danger" ng-click="remove()">Excluir</button>
