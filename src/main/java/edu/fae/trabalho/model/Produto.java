@@ -13,7 +13,6 @@ public class Produto {
 	private String nomeProd;
 	private String descProd;
 	private double valor;
-	private String situacao = "Aprovado";
 	
 	@ManyToOne
 	private Categoria categoria;
@@ -74,14 +73,6 @@ public class Produto {
 
 	public void setMarca(Marca marca) {
 		this.marca = marca;
-	}
-
-	public String getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
 	}
 
 	

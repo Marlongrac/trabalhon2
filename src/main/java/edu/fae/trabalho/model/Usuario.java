@@ -14,6 +14,8 @@ public class Usuario {
 	@GeneratedValue
 	private Long id;
 	private String nome;
+	private String email;
+	private String password;
 	
 	@ManyToMany
 	private List<Grupo> grupos = new ArrayList<Grupo>();
@@ -49,6 +51,22 @@ public class Usuario {
 
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 
