@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'ngRoute', 'fxpicklist']);
+var app = angular.module('app', ['ngResource', 'ngRoute', 'fxpicklist', 'ngFileUpload']);
 
 /**
  * Configuração das Rotas (páginas do sistema)

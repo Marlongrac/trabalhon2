@@ -19,12 +19,12 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FilesService {
 	@Value("${upload.dir}")
-	private String path;
+	private static String path;
 	
 	/**
 	 * Salva um arquivo no diretorio de upload 
 	 */
-	public String saveFile(MultipartFile file) {
+	public static String saveFile(MultipartFile file) {
 		try{
 			FileOutputStream fout = new FileOutputStream(path + file.getOriginalFilename());
 			IOUtils.copy(file.getInputStream(), fout);
@@ -38,7 +38,7 @@ public class FilesService {
 	/**
 	 * Responsavel por enviar arquivos de upload para o navegador do usuario 
 	 */
-	public void showFile(String file, HttpServletRequest request, HttpServletResponse response) {
+	public static void showFile(String file, HttpServletRequest request, HttpServletResponse response) {
 		try{ 
 			String fullFile = path + file;
 			if(!new File(fullFile).exists()) {

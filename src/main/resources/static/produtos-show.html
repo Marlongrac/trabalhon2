@@ -18,5 +18,13 @@
   <label>Marca</label>
   {{produto.marca.nomeMarca}}
 </div>
+<div class="form-group">
+	<div class='btn btn-default btn-sm' ngf-select="upload($file)">
+		Enviar Imagem
+	</div><br/>
+	<img ng-src="api/produtos/imagens?src={{produto.imagem}}"
+		 ng-show="produto.imagem"
+		 style="width: 200px"/> 
+</div> 
 <a href="#produtos/{{produto.id}}/edit" class="btn btn-primary">Editar</a>
 <button class="btn btn-danger" ng-click="remove()">Excluir</button>
