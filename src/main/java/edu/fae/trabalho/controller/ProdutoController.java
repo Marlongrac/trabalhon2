@@ -24,6 +24,8 @@ import edu.fae.trabalho.service.FilesService;
 @RequestMapping("/api/produtos")
 public class ProdutoController {
 	@Autowired ProdutoRepository produtoRepository;
+	@Autowired FilesService filesService;
+	
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<Produto> find(@RequestParam(required=false)String texto) {
 		if(texto!=null){
@@ -56,7 +58,7 @@ public class ProdutoController {
 			throws IOException {
 		Produto produto = produtoRepository.findOne(id);
 		
-		String imageName = FilesService.saveFile(file);
+		String imageName = filesService.saveFile(file);
 		produto.setImagem(imageName);
 		
 		produtoRepository.save(produto);
@@ -66,7 +68,7 @@ public class ProdutoController {
 	@RequestMapping(value="/imagens")
 	public void getImagem(@RequestParam("src") String imagem, HttpServletRequest request, 
 			HttpServletResponse response) {
-		FilesService.showFile(imagem, request, response);
+		filesService.showFile(imagem, request, response);
 	}
 		
 
