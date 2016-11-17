@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngResource', 'ngRoute', 'fxpicklist']);
+var app = angular.module('app', ['ngResource', 'ngRoute', 'fxpicklist', 'ngFileUpload']);
 
 //Interceptor de autenticação
 app.factory('authInterceptorService', ['$q', function ($q){
@@ -275,7 +275,7 @@ app.controller('MarcaController', function($scope, $routeParams, $route, $locati
 });
 
 //ProdutoController
-app.controller('ProdutoController', function($scope, $routeParams, $route, $location, ProdutoService, CategoriaService, MarcaService) {
+app.controller('ProdutoController', function($scope, $routeParams, $route, $location, ProdutoService, CategoriaService, MarcaService, Upload) {
 	
 	$scope.busca= "";
 	
@@ -323,6 +323,15 @@ app.controller('ProdutoController', function($scope, $routeParams, $route, $loca
 	    	});
 		}
   }	
+	
+	$scope.upload = function(file) {
+		Upload.upload({
+		        url: '/api/produtos/' + $scope.produto.id + '/upload',
+		        data: {file: file}
+		}).then(function (resp) {
+		    $scope.produto = resp.data;
+		});		
+	}	
 	
 	//Chama o método definido na rota
 	if($route.current.method){ 

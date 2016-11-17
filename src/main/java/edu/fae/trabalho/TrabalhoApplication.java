@@ -14,16 +14,16 @@ import edu.fae.trabalho.repository.UsuarioRepository;
 public class TrabalhoApplication {
 
 	//Dados iniciais da base de dados
-	@Bean
-	CommandLineRunner criaUsuarios(UsuarioRepository usuarioRepository){
-		return args -> {
-			Usuario usuario = new Usuario();
-			usuario.setNome("Admin");
-			usuario.setEmail("admin@fae.edu");
-			usuario.setPassword("12345");
-			usuarioRepository.save(usuario);			
-		};
-	}	
+//	@Bean
+//	CommandLineRunner criaUsuarios(UsuarioRepository usuarioRepository){
+//		return args -> {
+//			Usuario usuario = new Usuario();
+//			usuario.setNome("Admin");
+//			usuario.setEmail("admin@fae.edu");
+//			usuario.setPassword("12345");
+//			usuarioRepository.save(usuario);			
+//		};
+//	}	
 	
 	
 	public static void main(String[] args) {
